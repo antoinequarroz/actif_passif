@@ -1,0 +1,45 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Irregulars Verbs</h1>
+        <ul id="englishIrregularVerbs"></ul>
+
+        <script>
+        
+        const ul = document.getElementById('englishIrregularVerbs');
+        const url = 'https://raw.githubusercontent.com/antoinequarroz/Actif_Passif/master/list.json?token=AMIXDJMGPWWB6OZWTTSGQRK55IE7O';
+
+        function createNode(element) {
+            return document.createElement(element); // Create the type of element you pass in the parameters
+            }
+
+        function append(parent, el) {
+            return parent.appendChild(el); // Append the second parameter(element) to the first one
+            }
+
+        fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            // Here you get the data to modify as you please
+            let englishIrregularVerbs = data.verbs; //Get the results
+            console.log(englishIrregularVerbs);
+                return englishIrregularVerbs.map(function(verb) {
+                    let li = createNode('li');
+                    let span = createNode ('span');
+                    span.innerHTML = `${verb.Base} ${verb.PastSimple} ${verb.PastParticiple}`;
+                    console.log("true");
+                    append(li, span);
+                    append(ul, li);   
+                })
+        })
+  .catch(function(error) {
+    console.log(error);
+  });
+
+
+        </script>
+
+
+    </body>
+</html>
