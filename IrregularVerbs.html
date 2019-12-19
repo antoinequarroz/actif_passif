@@ -1,17 +1,23 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
        
     </head>
     <body>
-        <h1>Irregulars Verbs</h1>
-        <ul id="englishIrregularVerbs"></ul>
-
+        <h1 class="text-center">Irregulars Verbs</h1>
+   
+    </br>
+    <br>
+    <br>
+        <table class="text-center" id="englishIrregularVerbs"></table>
+   
         <script>
         
-        const ul = document.getElementById('englishIrregularVerbs');
-        const url = 'https://github.com/antoinequarroz/Actif_Passif/blob/master/list.json';
+        const table = document.getElementById('englishIrregularVerbs');
+        const url = '../Anglais/list.json';
 
         function createNode(element) {
             return document.createElement(element); // Create the type of element you pass in the parameters
@@ -19,7 +25,7 @@
 
         function append(parent, el) {
             return parent.appendChild(el); // Append the second parameter(element) to the first one
-            }
+            }            
 
         fetch(url)
         .then((resp) => resp.json())
@@ -28,18 +34,32 @@
             let englishIrregularVerbs = data.verbs; //Get the results
             console.log(englishIrregularVerbs);
                 return englishIrregularVerbs.map(function(verb) {
-                    let li = createNode('li');
-                    let span = createNode ('span');
-                    span.innerHTML = `${verb.Base} ${verb.PastSimple} ${verb.PastParticiple}`;
-                    console.log("true");
-                    append(li, span);
-                    append(ul, li);   
+                    
+              
+                    let tr = createNode('tr');
+                    let tdb = createNode ('td');
+                    let tdps = createNode ('td');
+                    let tdpp = createNode ('td');
+                    
+                   
+                    tdb.innerHTML = `${verb.Base}`;
+                    tdps.innerHTML = `${verb.PastSimple}`;
+                    tdpp.innerHTML = `${verb.PastParticiple}`;
+                
+                
+                    append(tr, tdb);
+                    append(tr, tdps);
+                    append(tr, tdpp);
+                    append(table, tr);
+                    
                 })
         })
+        
   .catch(function(error) {
     console.log(error);
   });
 
+  
 
         </script>
 

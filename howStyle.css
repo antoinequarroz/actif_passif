@@ -1,0 +1,12 @@
+body {
+    background-image: url(../Anglais/img/bg4.jpg);
+    background-attachment: fixed;
+    color: black;
+}
+
+
+h1 {
+    position: relative;
+    top: 3rem;
+    text-align: center;
+}

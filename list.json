@@ -1,5 +1,11 @@
 { "verbs" :
-    [{ 
+    [{
+        "Base" : "BASE", 		
+        "PastSimple" :	"PAST SIMPLE",
+        "PastParticiple" : "PAST PARTICIPLE"
+
+    },
+        { 
         "Base" : "arise", 		
         "PastSimple" :	"arose",
         "PastParticiple" : "arisen"
