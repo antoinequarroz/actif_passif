@@ -1,7 +1,7 @@
 body {
-   background-image: url(../Anglais/img/bgmountain.jpg);
+   background-color: #2D3142;
    background-attachment: fixed;
-    color: black;
+    color: white;
 }
 
 h1 {
@@ -14,8 +14,8 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    /* border: 3px solid purple; */
-    background opacity: 0%;: white;
+    border: 3px solid rgb(29, 26, 29);
+    background-color: #1fe0;
     
     
   }
@@ -38,4 +38,18 @@ table {
   
   th, td {
     padding: 20px;
+  }
+
+  tr {
+    font-size: 15px;
+    border: 3px solid rgb(29, 26, 29);
+
+  }
+  tr:hover {
+    font-size: 20px;
+    color: grey;
+  }
+
+  td{
+    border: 3px solid rgb(29, 26, 29);
   }
